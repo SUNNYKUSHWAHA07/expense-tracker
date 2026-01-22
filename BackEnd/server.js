@@ -13,7 +13,7 @@ import userRoutes from "./routes/userRoutes.js";
 import groupRoutes from "./routes/groupRoutes.js";
 
 const app = express();
-const __dirname = path.resolve();
+const _dirname = path.resolve();
 connectMongoDB();
 
 
@@ -34,7 +34,7 @@ app.use(cookieParser());
 
 
 
-
+//api routes
 app.use("/api/auth", authRoutes);
 app.use("/api/expense", protectedRoute, expenseRoutes);
 app.use("/api/Users", protectedRoute, userRoutes);
@@ -42,15 +42,12 @@ app.use("/api/", protectedRoute, groupRoutes);
 app.use("/api/balances", protectedRoute, groupRoutes);
 
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "Frontend/dist")));
-
-  app.get("*", (req, res) => {
-    res.sendFile(
-      path.join(__dirname, "Frontend/dist/index.html")
-    );
-  });
-}
+app.use(express.static(path.join(_dirname, "/Frontend/dist")));
+app.use((req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "Frontend", "dist", "index.html")
+  )
+})
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

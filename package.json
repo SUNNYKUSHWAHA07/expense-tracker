@@ -1,17 +1,25 @@
 {
-  "name": "expense-tracker",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
- "scripts": {
-    "build": "cd Frontend && npm install && npm run build",
-    "start": "cd Backend && npm install && node server.js"
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon backend/server.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "nodemon backend/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
-    "dotenv": "^17.2.3"
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.0.0",
+    "mongoose": "^9.1.5"
   }
 }
