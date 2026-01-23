@@ -8,7 +8,7 @@ import AddExpense from './componets/addExpenses'
 import CreateGroup from './componets/createGroup'
 import GroupDetails from './componets/groupDetails'
 import ProtectedRoute from './componets/ProtectedRoute'
-import { useAuth } from './Context/authContext'
+import { useAuth } from './Context/AuthContext'
 import EditExpenses from './componets/EditExpenses'
 import ExpenseCard from"./componets/ExpenseCard"
 
