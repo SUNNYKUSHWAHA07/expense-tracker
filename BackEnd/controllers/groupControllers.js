@@ -1,4 +1,4 @@
-import Group from "../models/groupModel.js";
+import Group from "../Models/groupModel.js";
 import Expense from "../Models/expenseModel.js";
 
 //create groups
