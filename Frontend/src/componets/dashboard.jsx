@@ -67,12 +67,7 @@ export default function Dashboard() {
              <p className="text-center text-gray-500">
               No groups created yet
             </p>
-             <button
-            onClick={() => navigate("/create-group")}
-            className="w-full mt-10 bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-2 rounded-lg font-medium"
-          >
-            Create Group
-          </button>
+           
             </>
         
           ) : (
@@ -108,6 +103,12 @@ export default function Dashboard() {
               ))}
             </div>
           )}
+            <button
+            onClick={() => navigate("/create-group")}
+            className="w-full mt-10 bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-2 rounded-lg font-medium"
+          >
+            Create Group
+          </button>
            <button
             onClick={() => navigate(-1)}
             className="w-full mt-10 bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-2 rounded-lg font-medium"
