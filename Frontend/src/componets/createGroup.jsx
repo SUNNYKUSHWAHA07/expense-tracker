@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateGroup({ currentUserId }) {
   const [groupName, setGroupName] = useState("");
   const [users, setUsers] = useState([]);
   const [selectedMembers, setSelectedMembers] = useState([currentUserId]);
   const [loading, setLoading] = useState(true);
-
+ const navigate = useNavigate();
   // 🔹 Fetch users
   useEffect(() => {
     const fetchUsers = async () => {
@@ -75,7 +76,7 @@ export default function CreateGroup({ currentUserId }) {
         alert(data.message || "Failed to create group");
         return;
       }
-
+      navigate("/dashboard")
       alert("Group created successfully");
 
       // reset
