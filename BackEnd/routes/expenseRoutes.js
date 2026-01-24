@@ -7,13 +7,13 @@ const router = express.Router();
 
 
 
-// Sample route for expenses
-router.get("/", getAllExpenses);
-router.post("/", createExpense);
-router.delete("/:id", removeExpense);
-router.get("/split", splitExpenses);
+;
 
 //exprense routes
+router.get("/", protectedRoute, getAllExpenses);
+router.post("/", protectedRoute, createExpense);
+router.delete("/:id", protectedRoute, removeExpense);
+router.get("/split", protectedRoute, splitExpenses)
 router.get("/expenses/group/:groupId", protectedRoute, getGroupExpenses);
 router.put("/expenses/:id", protectedRoute, updateExpense);
 router.get("/expenses/:id", protectedRoute, getExpenseById);
